@@ -76,10 +76,14 @@ console.log(subArray);
 
 console.log(thirdArray);
 
-let subArray2 = thirdArray.splice(2, 3);  //prende il numero di partenza (compreso) e tanti elementi dopo quello quanti ne scrivo nel secondo numero (3)
+let subArray2 = thirdArray.splice(2, 3);  //prende il numero di partenza (2)(compreso) e tanti elementi dopo quello quanti ne scrivo nel secondo numero (3)
 
 console.log(subArray2);
 
 console.log(thirdArray);
 
 let subArray3 = thirdArray.splice(2, 3, 12, 13, 14);  //in questo caso toglie dall'array 2, 3, 4 e li rimpiazza con 12, 13, 14.
+
+console.log(subArray3);
+
+console.log(thirdArray);
