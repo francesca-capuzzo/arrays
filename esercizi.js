@@ -36,7 +36,7 @@ for (let i = 0; i < strings.length; i++) {
     if (strings[i] === ""){
         break;
     } else {
-        initials.push(strings[i][0]);                          //oppure if (string !== "") --> initials.push(element[0]);
+        initials.push(strings[i][0]);                 //oppure if (string !== "") --> initials.push(element[0]);
     }  
 }
 
