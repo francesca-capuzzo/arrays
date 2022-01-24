@@ -87,3 +87,44 @@ let subArray3 = thirdArray.splice(2, 3, 12, 13, 14);  //in questo caso toglie da
 console.log(subArray3);
 
 console.log(thirdArray);
+
+//************************************************************************/
+//
+
+let numeroPiuGrande = Math.max(5, 10, 2);           //risultato --> 10 ovvero sempre il numero più grande
+
+console.log(numeroPiuGrande);
+
+let numeroPiuGrandeArray = Math.max(...thirdArray);  //i ... distribuiscono l'array e lo trasformano in valori così da restituire il valore maggiore.
+
+console.log(numeroPiuGrandeArray);
+
+function stringaPiuLunga(...stringhe) {              //tutti i parametri inseriti vengono re-impacchettati come array
+    let strPiuLunga = ""             
+    for (let i = 0; i < stringhe.length; i++) {
+        const element = stringhe[i];
+        if (strPiuLunga.length < element.length){
+            strPiuLunga = element;
+        }
+    }
+    return strPiuLunga;
+}
+console.log(stringaPiuLunga("pippo", "topolino", "pluto"));
+
+
+
+
+
+let n = -Infinity;                               //funziona con i numeri negativi ponendo n = -infinity (il numero più piccolo in assoluto) oppure ponendo n = numbers[0] perchè il primo numero che verrà passato sarà sempre il più piccolo (o più grande)
+function maxNumber(...numbers){
+    for (let i = 0; i < numbers.length; i++) {   //.length si riferisce alla lunghezza dell'array dentro cui sono stati impacchettati i numbers con la funzione ...
+        const element = numbers[i];
+        if (n < element)  { 
+            n = element;
+        }
+    }
+    return n;
+}
+console.log(maxNumber(-100, -12, -3, -1001));
+
+
