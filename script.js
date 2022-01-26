@@ -128,3 +128,81 @@ function maxNumber(...numbers){
 console.log(maxNumber(-100, -12, -3, -1001));
 
 
+//***********************************************************/
+//STESSA SITUAZIONE CHE C'E' IN OBJECT.JS (ma per gli array)
+
+let array5 = [7, 4, 100, 12];            //CONST al posto di let non cambierebbe il risultato finale (che sarebbe comunque sbagliato) perchè const non può essere riassegnato ma può essere modificato.
+
+function doubleFirstElement(array) {
+    
+    array[0] = array[0] * 2;
+    return array;
+}
+
+let newArray = doubleFirstElement(array5);
+
+console.log(array5);         //RESULT: [14, 4, 100, 12] --> modifico l'array di partenza.
+console.log(newArray);       //RESULT: [14, 4, 100, 12]
+
+
+
+let array5 = [7, 4, 100, 12];            
+
+function doubleFirstElement(array) {
+    let tempArray = [];                      //creo un array vuoto temporaneo per non modificare il primo
+
+    for (let i = 0; i < array.length; i++) {  //faccio una copia dell'array di partenza (che è array5 ma viene inserito nella variabile array)
+        tempArray.push(array[i]);
+        
+    }
+    tempArray[0] = tempArray[0] * 2;
+    return tempArray;
+}
+
+let newArray = doubleFirstElement(array5);
+
+console.log(array5);         //RESULT: [7, 4, 100, 12] --> NON modifico l'array di partenza.
+console.log(newArray);       //RESULT: [14, 4, 100, 12]
+
+
+
+
+
+let array5 = [7, 4, 100, 12];           
+
+function doubleFirstElement(array) {
+    
+    let tempArray = [...array];        //spacchetto array che sarebbe poi array5 riassegnato visto che passo la variabile alla funzione nel log.
+    tempArray[0] = tempArray[0] * 2;
+    return tempArray;
+}
+
+let newArray = doubleFirstElement(array5);
+
+console.log(array5);         //RESULT: [7, 4, 100, 12] 
+console.log(newArray);       //RESULT: [14, 4, 100, 12]
+
+
+
+//*********************************************************/
+
+let finalArray = [23, 13, 5, 12];
+
+function sumFirst4ElementsOfArray(array) {
+    return array[0] + array[1] + array[2] + array[3];        //con gli indici (e identico sotto:)
+}
+
+
+function sumFirst4ElementsOfArray([el0, el1, el2, el3]) {   //con valori assegnati al paramentro della funzione
+    return el0 + el1 + el2 + el3;
+}
+
+//*******************************LIST*************/
+
+let lastElement = {value: 3, nextElement: null };
+
+let secondElement = {value: 7, nextElement: lastElement };
+
+let firstElement = {value: 5, nextElement: secondElement };
+
+console.log(firstElement.value, firstElement.nextElement.value, firstElement.nextElement.nextElement.value);   //RESULT: 3, 7, 5
