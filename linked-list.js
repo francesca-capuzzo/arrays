@@ -14,7 +14,8 @@ let fourthElement = {value: 2, nextElement: null, previusElement: thirdElement};
 
 thirdElement.nextElement = fourthElement;
 
-//per ciclare una lista di questo tipo non posso usare il for loop perchè non ho indici ma devo usare il ciclo while:
+
+//per ciclare una lista di questo tipo NON è FACILE usare il for loop perchè non ho indici ma devo usare il ciclo while:
 
 let node = firstElement; 
 
@@ -22,11 +23,19 @@ while(true) {
     console.log(node.value);                       //RISULTATO: 5, 9, 8, 2
 
     if(node.nextElement !== null) {
-        node = node.nextElement;
+        node = node.nextElement;                   //fai diventare il nodo, il prossimo nodo
     } else {
         break;
     }
 }
+
+
+//OPPURE FOR LOOP:
+
+for (let node = firstElement; node !== null; node = node.nextElement) {      //node !== null o node; è come scrivere la stessa cosa perchè va a verificare se quella cosa esiste!!
+    console.log(node);
+}
+
 
 
 //oppure DO WHILE:
@@ -37,6 +46,9 @@ while (node !== null) {                          //finchè c'è node:
 }
 //RISULTATO: 5, 9, 8, 2
 
+
+
+
 let node2 = fourthElement;
 
 while (node2 !== null) {                          //finchè c'è node:
@@ -44,6 +56,9 @@ while (node2 !== null) {                          //finchè c'è node:
     node2 = node2.previusElement;                 //prendi il precedente finchè arriva a (node == null) e finische il ciclo.
 }
 //RISULTATO: 2, 8, 9, 5
+
+
+
 
 
 let myFirstNode = {};                                 //risulterà undefined.
